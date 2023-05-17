@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div style="background-color: #f0f0f0;" class="flex justify-center items-center w-screen h-screen">
+    <div style="width: 30%">
+      <h1 class="font-bold text-xl text-center mb-3">LOGIN PAGE</h1>
+      <% if(errors) {%>
+        <%- include('partial/error.ejs', { errors }) %>
+        <% } %>
+      <form action="/login" method="post" style="background-color: #99B4D1;" class="p-10 space-y-3 border-dashed border border-black">
+        <div class="grid grid-cols-4">
+          <label for="username" class="font-semibold">Username</label>
+          <input type="text" id="username" name="username" class="col-span-2 py-1 px-2">
+        </div>
+        <div class="grid grid-cols-4">
+          <label for="password" class="font-semibold">Password</label>
+          <input type="password" id="password" name="password" class="col-span-2 py-1 px-2">
+        </div>
+        <div class="grid grid-cols-4">
+          <div></div>
+          <button type="submit" style="background-color: #E1E1E1;">Login</button>
+        </div>
+      </form>
+      <div class="w-full text-end space-x-3 mt-3">
+        <a href="/register" class="py-1 px-5" style="background-color: #E1E1E1;">Register</a>
+        <a href="/data" class="py-1 px-5" style="background-color: #E1E1E1;">View Data</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

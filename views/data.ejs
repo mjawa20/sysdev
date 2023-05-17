@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div style="background-color: #f0f0f0;" class="flex justify-center items-center w-screen h-screen">
+    <div style="width: 50%">
+      <h1 class="font-bold text-xl text-center mb-3">VIEW DATA</h1>
+      <div style="background-color: #ABABAB; min-height: 230px;"
+        class="grid gap-5 grid-cols-3 p-5 mb-3 grid-start  border-dashed border overflow-auto border-black max-h-96">
+        <% user?.forEach(element=> { %>
+          <div style="background-color: #99B4D1;" class="p-3 h-fit space-y-1 text-center ">
+            <P><%= element.age %></P>
+            <P><%= element.username %></P>
+          </div>
+          <% }) %>
+      </div>
+      <div class="text-end mt-2">
+        <a href="/" style="background-color: #E1E1E1;" class="uppercase py-1 px-4 ">Back to login</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>

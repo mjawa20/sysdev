@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div style="background-color: #f0f0f0;" class="flex justify-center items-center w-screen h-screen">
+    <div style="width: 40%">
+      <h1 class="font-bold text-xl text-center mb-3">REGISTER PAGE</h1>
+      <% if(errors) {%>
+        <%- include('partial/error.ejs', { errors }) %>
+        <% } %>
+
+      <form action="/register" method="POST" style="background-color: #99B4D1;"
+        class="p-10 space-y-3 border-dashed border border-black">
+        <div class="grid grid-cols-4 space-x-2">
+          <label for="username" class="font-semibold">Username</label>
+          <input type="email" id="username" name="username" required class="col-span-2 py-1 px-2">
+        </div>
+        <div class="grid grid-cols-4 space-x-2">
+          <label for="password" class="font-semibold">Password</label>
+          <input type="password" id="password" name="password" required class="col-span-2 py-1 px-2">
+        </div>
+        <div class="grid grid-cols-4 space-x-2">
+          <label for="confirm-password" class="font-semibold">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm" required class="col-span-2 py-1 px-2">
+        </div>
+        <div class="grid grid-cols-4 space-x-2">
+          <label for="age" class="font-semibold">Age</label>
+          <select name="age" id="age" name="age" class="py-1 px-2" required>
+            <% for( let i=18; i < 100; i++ ) { %>
+              <option><%- i %></option>
+              <% } %>
+          </select>
+        </div>
+        <div class="grid grid-cols-4 space-x-2">
+          <div></div>
+          <button type="submit" style="background-color: #E1E1E1;">Register</button>
+          <a href="/" style="background-color: #E1E1E1;" class="text-center">Back To Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

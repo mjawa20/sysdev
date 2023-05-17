@@ -1,0 +1,8 @@
+<% if(errors) {%>
+  <div class="p-4 mb-3 bg-red-100  mx-auto ">
+    <% errors.split(',').forEach(err=> { %>
+      <div style="color:red; ">
+        <%= err %>
+      </div>
+      <% })} %>
+  </div>
