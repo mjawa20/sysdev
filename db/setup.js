@@ -16,7 +16,6 @@ module.exports = {
           pool.query(getAllUser, (err) => {
             if (err) return console.error(err)
             console.log('created stored procedure')
-            pool.end()
 
             cb()
           })
