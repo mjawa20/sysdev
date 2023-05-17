@@ -1,0 +1,1 @@
+SELECT name, avg(score) AS averageScore  FROM emotions GROUP BY name; 
